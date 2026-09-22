@@ -21,10 +21,10 @@ O projeto simula uma consultoria estruturada de BI, com a equipe dividida nos se
 
 ### Fase 1: Governança & Escopo
 * [x] **Project Charter:** Termo de abertura, justificativa, escopo e Matriz de Riscos.
-* [ ] **Requisitos:** Mapeamento de 8 KPIs e 10 perguntas estratégicas de negócio.
+* [x] **Requisitos:** Mapeamento de KPIs e perguntas estratégicas de negócio.
 
 ### Fase 2: Infraestrutura & Modelagem (Engenharia T-SQL)
-* [ ] **AWS & Staging Area:** Provisionamento do SQL Server na AWS e carga bruta.
+* [x] **AWS & Staging Area:** Provisionamento do SQL Server na AWS e carga bruta.
 * [ ] **Modelagem Star Schema:** Criação do modelo relacional dimensional.
 * [ ] **Dicionário de Dados:** Documentação técnica completa (PKs, FKs, Surrogate Keys).
 * [ ] **DDL & DML:** Scripts de criação e procedures de carga, tratamento de nulos e duplicados.
