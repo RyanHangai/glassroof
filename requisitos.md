@@ -10,7 +10,7 @@ Onde segmentar o discurso de campanha por perfil demográfico (idade x renda), d
 
 ## Pergunta N° 2:
 ### **Pergunta de Negócio:**
-Qual é a relação entre o gasto eleitoral por partido e o número de votos/eleitos obtidos(custo por voto)? 
+Qual é a relação entre o gasto eleitoral por partido e o número de votos/eleitos obtidos(custo por voto)? (eleições de 2016 apenas)
 ### **Decisção que ela apoia:**
 Serve de referência histórica para partidos definirem, em campanhas futuras, se vale mais investir concentrado em poucos candidatos fortes ou pulverizar recursos entre vários. 
 
@@ -62,7 +62,7 @@ N° 1
 
 ## KPI N° 2:
 ### **KPI:**
-Custo por voto (CPV)
+Custo por voto (CPV) (eleições de 2016 apenas)
 ### **Definição / Fórmula:**
 Gasto eleitoral total do partido / Número total de votos obtidos  
 ### **Pergunta relacionada:**
