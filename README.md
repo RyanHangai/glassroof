@@ -1,48 +1,52 @@
 # GlassRoof
 
-Este repositório contém os artefatos e a documentação do Projeto de Business Intelligence voltado para a análise de dados eleitorais do Tribunal Superior Eleitoral (TSE). O projeto tem como base ensinar como funciona o BI na prática, integrando governança de dados, engenharia no banco de dados e visualização, como parte do Roteiro Integrado da Faculdade Impacta.
+Projeto de Business Intelligence sobre dados eleitorais do TSE (eleições municipais de São Paulo, 1996 e 2016), do Projeto Integrador da Faculdade Impacta. Integra Innovation Lab Applied BI, Relational Database Programming (T-SQL) e Business Intelligence.
 
 ## Objetivo
-Responder a perguntas estratégicas de negócio e acompanhar KPIs fundamentais das eleições por meio de um dashboard interativo, garantindo a qualidade e governança da extração à visualização dos dados.
 
-## Tecnologias Utilizadas
-* **Banco de Dados & Nuvem:** SQL Server, AWS (Amazon Web Services)
-* **Linguagens:** T-SQL, DAX
-* **Business Intelligence:** Power BI, Power Query
+Responder às perguntas estratégicas e acompanhar os KPIs definidos na matriz de requisitos (`requisitos.md`), com um dashboard interativo, da extração dos dados à visualização.
 
-## Papéis da Equipe
-O projeto simula uma consultoria estruturada de BI, com a equipe dividida nos seguintes papéis:
-* **Scrum Master / PM:** Gestão e Governança
-* **Engenheiro de Dados:** T-SQL e AWS Sandbox
-* **Analista de BI:** Power Query, DAX e Dashboard
-* **Analista de Dados:** Validação e Storytelling
+## Tecnologias
 
-## Fases do Projeto
+- **Banco de dados:** SQL Server (testes locais em Docker e restore em Windows; AWS RDS como destino do projeto)
+- **Linguagens:** T-SQL, DAX
+- **BI:** Power BI, Power Query
 
-### Fase 1: Governança & Escopo
-* [x] **Project Charter:** Termo de abertura, justificativa, escopo e Matriz de Riscos.
-* [x] **Requisitos:** Mapeamento de KPIs e perguntas estratégicas de negócio.
+## Estrutura do repositório
 
-### Fase 2: Infraestrutura & Modelagem (Engenharia T-SQL)
-* [x] **AWS & Staging Area:** Provisionamento do SQL Server na AWS e carga bruta.
-* [ ] **Modelagem Star Schema:** Criação do modelo relacional dimensional.
-* [ ] **Dicionário de Dados:** Documentação técnica completa (PKs, FKs, Surrogate Keys).
-* [ ] **DDL & DML:** Scripts de criação e procedures de carga, tratamento de nulos e duplicados.
+| Pasta / arquivo | Conteúdo |
+| --- | --- |
+| `dados_brutos/` | Arquivos originais (TSE, Atlas, IBGE) |
+| `dados_limpos/` | CSVs tratados que alimentam as tabelas de staging |
+| `scripts_sql/` | Staging, checagens e views dos KPIs |
+| `COMO_USAR.md` | Ordem de execução dos scripts |
+| `requisitos.md` | Matriz de requisitos e KPIs |
 
-### Fase 3: ETL & Power BI
-* [ ] **ETL Power Query:** Conexão, limpeza e transformações documentadas.
-* [ ] **Modelo Tabular:** Configuração de relacionamentos (1:N) e ocultação de chaves técnicas.
-* [ ] **Medidas DAX:** Criação de pelo menos 12 medidas (Time Intelligence, CALCULATE, etc.).
-* [ ] **Dashboard (UX/UI):** Design visual em 4 páginas com foco na jornada do usuário (Visão Geral, Análise Regional, Perfil do Eleitorado, Detalhamento de Candidatos).
+## Fases do projeto
 
-### Fase 4: Auditoria & Apresentação
-* [ ] **Governança & Audit:** Validação e conciliação (batimento) entre consultas SQL (AWS) e valores do Power BI.
-* [ ] **Pitch Executivo:** Apresentação final dos resultados alcançados.
+### Fase 1: Governança e escopo
+- [x] Project Charter
+- [x] Requisitos: 6 perguntas de negócio e 6 KPIs
 
-## Modelagem Dimensional
-O banco de dados foi estruturado no formato Star Schema, contendo:
-* **Tabela Fato:** `Fato_Votacao` (com a métrica de `Qtd_Votos`).
-* **Dimensões:** `Dim_Candidato`, `Dim_Municipio_Zona`, `Dim_Partido` e `dCalendario`.
+### Fase 2: Infraestrutura e engenharia T-SQL
+- [x] Staging Area: votação, candidatos, gastos, IDHM/renda e população carregados
+- [x] Views dos KPIs 1 a 6 (KPI 6 parcial)
+- [ ] Modelagem Star Schema
+- [ ] Dicionário de dados
+- [ ] DDL e DML (procedures de carga)
 
----
+### Fase 3: ETL e Power BI
+- [x] Conexão do Power BI ao SQL Server
+- [x] Modelo tabular com relacionamentos 1:* (`dim_Partido`, `dim_Ano`, `Socio_Municipio`)
+- [ ] Medidas DAX (em andamento: KPI 1, 2 e 4)
+- [ ] Dashboard (cerca de 4 gráficos por KPI, em andamento)
+
+### Fase 4: Auditoria e apresentação
+- [ ] Conciliação entre consultas SQL e valores do Power BI
+- [ ] Apresentação final
+
+## Equipe
+
+Ana Luiza Malumbres Botelho, Arthur Gomes Guerra, Júlio da Silva Magno, Ryan de Vasconcelos Hangai e Michel H. de Paula Domingues.
+
 *Projeto acadêmico - Faculdade Impacta*
